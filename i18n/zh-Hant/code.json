@@ -1,0 +1,50 @@
+{
+    "homepage.title": {
+        "message": "首頁"
+    },
+    "homepage.description": {
+        "message": "一個快速、輕量級的 Git TUI（終端介面），用於 Git 操作"
+    },
+    "homepage.tagline": {
+        "message": "一個快速、輕量級的 Git 操作終端 UI"
+    },
+    "homepage.getStarted": {
+        "message": "開始使用"
+    },
+    "homepage.github": {
+        "message": "GitHub"
+    },
+    "feature.fast.title": {
+        "message": "快速 & 輕量"
+    },
+    "feature.fast.description": {
+        "message": "瞬間啟動。極低的記憶體佔用。使用 Go 和 Bubble Tea 構建，性能極致。"
+    },
+    "feature.keyboard.title": {
+        "message": "鍵盤驅動"
+    },
+    "feature.keyboard.description": {
+        "message": "無需觸碰滑鼠。使用直觀的快捷鍵導航分支、提交和檔案。"
+    },
+    "feature.visual.title": {
+        "message": "流暢的工作流程"
+    },
+    "feature.visual.description": {
+        "message": "跳過複雜的 git 指令。互動式 UI 在每一步都提供視覺回饋，引導您完成操作。"
+    },
+    "install.title": {
+        "message": "快速安裝"
+    },
+    "install.tab.go": {
+        "message": "Go"
+    },
+    "install.tab.macos": {
+        "message": "macOS"
+    },
+    "install.tab.linux": {
+        "message": "Linux"
+    },
+    "install.tab.windows": {
+        "message": "Windows"
+    }
+}

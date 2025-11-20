@@ -1,0 +1,532 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: left;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroLogo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroLogo img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  filter: drop-shadow(0 0 30px rgba(130, 170, 255, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.heroLogo:hover img {
+  transform: scale(1.02);
+}
+
+.heroTitle {
+  font-size: 4.5rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 1.5rem !important;
+  background: var(--gitti-gradient-blue-purple) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  line-height: 1.1 !important;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem !important;
+  color: var(--ifm-font-color-base) !important;
+  font-weight: 400 !important;
+  margin-bottom: 2.5rem !important;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.primaryButton {
+  font-weight: 600 !important;
+  padding: 0.75rem 2.5rem !important;
+  border-radius: 8px !important;
+  background: var(--gitti-gradient-blue-purple) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px 0 rgba(127, 181, 255, 0.25) !important;
+  transition: all 0.2s ease !important;
+  color: white !important;
+  font-size: 1.1rem !important;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(158, 134, 200, 0.35) !important;
+  opacity: 0.9;
+  text-decoration: none !important;
+}
+
+.secondaryButton {
+  font-weight: 600 !important;
+  padding: 0.75rem 2.5rem !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  border: 1px solid var(--gitti-blue) !important;
+  color: var(--gitti-blue) !important;
+  transition: all 0.2s ease !important;
+  font-size: 1.1rem !important;
+}
+
+.secondaryButton:hover {
+  background: rgba(127, 181, 255, 0.1) !important;
+  border-color: var(--gitti-purple) !important;
+  color: var(--gitti-purple) !important;
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+/* Light mode override for secondary button */
+:global([data-theme='light']) .secondaryButton {
+  border-color: #000000 !important;
+  color: #000000 !important;
+}
+
+:global([data-theme='light']) .secondaryButton:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: #000000 !important;
+  color: #000000 !important;
+}
+
+/* Force black text on the link itself in light mode */
+:global([data-theme='light']) .secondaryButton,
+:global([data-theme='light']) .secondaryButton:visited,
+:global([data-theme='light']) .secondaryButton:link,
+:global([data-theme='light']) .secondaryButton * {
+  color: #000000 !important;
+}
+
+/* Terminal Window */
+.terminalWindow {
+  margin: 4rem auto 0;
+  max-width: 700px;
+  background: #1a1b26;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.terminalWindow:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.terminalHeader {
+  background: #24283b;
+  padding: 0.75rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #414868;
+}
+
+.terminalDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminalDot.red {
+  background: #ff5f56;
+}
+
+.terminalDot.yellow {
+  background: #ffbd2e;
+}
+
+.terminalDot.green {
+  background: #27c93f;
+}
+
+.terminalBody {
+  padding: 1.5rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.terminalLine {
+  margin-bottom: 0.5rem;
+  color: #c0caf5;
+}
+
+.terminalLine.output {
+  margin-top: 1.5rem;
+  color: var(--gitti-green);
+}
+
+.prompt {
+  color: var(--gitti-purple);
+  font-weight: bold;
+}
+
+.path {
+  color: var(--gitti-blue);
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--gitti-green);
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsive - Comprehensive */
+@media (max-width: 498px) {
+
+  /* Hero Section */
+  .heroBanner {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .heroInner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .heroSubtitle {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem !important;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .buttons .button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .heroLogo img {
+    max-height: 250px;
+    max-width: 100%;
+  }
+
+  /* Terminal Window */
+  .terminalWindow {
+    margin: 2rem 0 0;
+    max-width: 100%;
+  }
+
+  .terminalBody {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .terminalLine {
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  /* Installation Section */
+  .installSection {
+    padding: 3rem 0 3rem;
+  }
+
+  .installBox {
+    border-radius: 8px;
+    margin: 0 1rem;
+  }
+
+  .installHeader {
+    padding: 1rem;
+  }
+
+  .installBoxTitle {
+    font-size: 1.1rem !important;
+  }
+
+  .installTabs {
+    padding: 0.5rem;
+    gap: 0.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .installTab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .installCommand {
+    padding: 1rem;
+  }
+
+  .installCommand code {
+    font-size: 0.75rem;
+    word-break: break-all;
+  }
+
+  /* Features Section */
+  .features {
+    padding: 4rem 1rem 6rem;
+  }
+
+  .features .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .features .col {
+    max-width: 100%;
+  }
+
+  .features .featureCard {
+    margin-bottom: 0;
+    padding: 2rem 1.5rem !important;
+  }
+
+  .featureIconWrapper {
+    margin-bottom: 1.25rem;
+  }
+
+  .featureIcon {
+    width: 56px;
+    height: 56px;
+    padding: 0.875rem;
+  }
+
+  .featureIcon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .featureDescription {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Footer Fix */
+  footer.footer {
+    padding: 2rem 1.5rem !important;
+  }
+
+  footer.footer .container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Features Section */
+.features {
+  padding: 1rem 0 8rem;
+}
+
+.featureCard {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: var(--gitti-card-bg);
+  border: 1px solid rgba(65, 72, 104, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.featureCard:hover {
+  background: var(--gitti-card-bg);
+  border-color: var(--gitti-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(127, 181, 255, 0.15);
+}
+
+.featureIconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.featureIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--gitti-blue);
+  padding: 1rem;
+  background: rgba(127, 181, 255, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(127, 181, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover .featureIcon {
+  color: var(--gitti-purple);
+  background: rgba(158, 134, 200, 0.15);
+  border-color: var(--gitti-purple);
+  transform: scale(1.1);
+}
+
+.featureTitle {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  color: var(--ifm-heading-color) !important;
+}
+
+.featureDescription {
+  color: var(--ifm-font-color-base) !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 !important;
+}
+
+/* Installation Section */
+.installSection {
+  padding: 2rem 0 1.5rem;
+  background: transparent;
+}
+
+.installBox {
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--gitti-card-bg);
+  border: 1px solid var(--gitti-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.installHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--gitti-border);
+}
+
+.installIcon {
+  font-size: 1.5rem;
+}
+
+.installBoxTitle {
+  font-size: 1.25rem !important;
+  margin: 0 !important;
+  color: var(--ifm-heading-color) !important;
+}
+
+.installTabs {
+  display: flex;
+  gap: 0;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--gitti-border);
+  overflow-x: auto;
+}
+
+.installTab {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.installTab:hover {
+  opacity: 1;
+  color: var(--gitti-blue);
+}
+
+.installTabActive {
+  border-bottom-color: var(--gitti-blue);
+  color: var(--gitti-blue);
+  opacity: 1;
+}
+
+.installCommand {
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.installCommand:hover {
+  background: rgba(130, 170, 255, 0.05);
+}
+
+.installCommand code {
+  display: block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  color: var(--gitti-blue);
+  user-select: all;
+}
+
+.copyButton {
+  display: none;
+}

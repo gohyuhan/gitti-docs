@@ -1,0 +1,50 @@
+{
+    "homepage.title": {
+        "message": "ホーム"
+    },
+    "homepage.description": {
+        "message": "Git操作のための高速で軽量な Git TUI（ターミナルインターフェース）"
+    },
+    "homepage.tagline": {
+        "message": "Git操作のための高速で軽量なターミナルUI"
+    },
+    "homepage.getStarted": {
+        "message": "はじめる"
+    },
+    "homepage.github": {
+        "message": "GitHub"
+    },
+    "feature.fast.title": {
+        "message": "高速 & 軽量"
+    },
+    "feature.fast.description": {
+        "message": "瞬時に起動。メモリ使用量は最小限。GoとBubble Teaで構築され、最高のパフォーマンスを実現。"
+    },
+    "feature.keyboard.title": {
+        "message": "キーボード駆動"
+    },
+    "feature.keyboard.description": {
+        "message": "マウスに触れる必要はありません。直感的なキーバインドでブランチ、コミット、ファイルを操作できます。"
+    },
+    "feature.visual.title": {
+        "message": "効率的なワークフロー"
+    },
+    "feature.visual.description": {
+        "message": "複雑なgitコマンドは不要。対話型UIがすべてのステップで視覚的なフィードバックを提供しながら、操作をガイドします。"
+    },
+    "install.title": {
+        "message": "クイックインストール"
+    },
+    "install.tab.go": {
+        "message": "Go"
+    },
+    "install.tab.macos": {
+        "message": "macOS"
+    },
+    "install.tab.linux": {
+        "message": "Linux"
+    },
+    "install.tab.windows": {
+        "message": "Windows"
+    }
+}

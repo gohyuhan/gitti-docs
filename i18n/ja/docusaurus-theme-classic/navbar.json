@@ -1,0 +1,10 @@
+{
+    "item.label.Get Started": {
+        "message": "はじめに",
+        "description": "Navbar item with label Get Started"
+    },
+    "item.label.GitHub": {
+        "message": "GitHub",
+        "description": "Navbar item with label GitHub"
+    }
+}
