@@ -9,11 +9,10 @@ fi
 
 VERSION="version-$1"
 # Assuming script is run from project root, docs are in "docs"
-DOCS_ROOT="docs"
 
 # Check if docs directory exists
-if [ ! -d "$DOCS_ROOT" ]; then
-  echo "Error: '$DOCS_ROOT' directory not found. Please run this script from the project root."
+if [ ! -d "./" ]; then
+  echo "Error: './' directory not found. Please run this script from the project root."
   exit 1
 fi
 
@@ -49,14 +48,14 @@ sync_dir() {
 }
 
 # 1. Sync Main Docs (docs/docs -> docs/versioned_docs/version-X.X.X)
-sync_dir "$DOCS_ROOT/docs" "$DOCS_ROOT/versioned_docs/$VERSION"
+sync_dir "./docs" "./versioned_docs/$VERSION"
 
 # 2. Sync i18n Docs
 LANGUAGES=("ja" "zh-Hans" "zh-Hant")
 
 for LANG in "${LANGUAGES[@]}"; do
-  SRC="$DOCS_ROOT/i18n/$LANG/docusaurus-plugin-content-docs/current"
-  DEST="$DOCS_ROOT/i18n/$LANG/docusaurus-plugin-content-docs/$VERSION"
+  SRC="./i18n/$LANG/docusaurus-plugin-content-docs/current"
+  DEST="./i18n/$LANG/docusaurus-plugin-content-docs/$VERSION"
   sync_dir "$SRC" "$DEST"
 done
 
