@@ -21,6 +21,24 @@ go install github.com/gohyuhan/gitti@latest
 
 Ensure your `$GOPATH/bin` is in your `$PATH` to run `gitti` from anywhere.
 
+## macOS
+
+```bash
+Coming soon.
+```
+
+## Linux
+
+```bash
+Coming soon.
+```
+
+## Windows
+
+```bash
+Coming soon.
+```
+
 ## Build from Source
 
 1.  Clone the repository:

@@ -4,8 +4,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Translate, { translate } from '@docusaurus/Translate';
+import CodeBlock from '@theme/CodeBlock';
 import styles from './index.module.css';
-import { JSX, useState } from 'react';
+import { JSX, useState, useEffect } from 'react';
 
 // SVG Icon Components
 function ZapIcon() {
@@ -68,26 +69,146 @@ function HomepageHeader() {
           </div>
         </div>
 
-        <div className={styles.terminalWindow}>
-          <div className={styles.terminalHeader}>
-            <div className={clsx(styles.terminalDot, styles.red)}></div>
-            <div className={clsx(styles.terminalDot, styles.yellow)}></div>
-            <div className={clsx(styles.terminalDot, styles.green)}></div>
-          </div>
-          <div className={styles.terminalBody}>
-            <div className={styles.terminalLine}>
-              <span className={styles.prompt}>➜</span> <span className={styles.path}>~</span> cd my-project
-            </div>
-            <div className={styles.terminalLine}>
-              <span className={styles.prompt}>➜</span> <span className={styles.path}>my-project</span> gitti
-            </div>
-            <div className={clsx(styles.terminalLine, styles.output)}>
-              Initializing Gitti UI... <span className={styles.cursor}></span>
-            </div>
-          </div>
-        </div>
+        <TerminalWindow />
       </div>
     </header>
+  );
+}
+
+function TerminalWindow() {
+  const [lines, setLines] = useState<Array<{ prompt: string; command?: string; output?: string; isWelcome?: boolean }>>([]);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [typedText, setTypedText] = useState('');
+  const [isClearing, setIsClearing] = useState(false);
+
+  const welcomeMessage = translate({
+    id: 'terminal.welcome',
+    message: 'Welcome to Gitti Docs',
+  });
+
+  const commandSequence = [
+    { prompt: '~/', command: 'cd projects' },
+    { prompt: '~/projects', command: 'cd gitti-docs' },
+    { prompt: '~/projects/gitti-docs', command: 'npm start' },
+    { prompt: '~/projects/gitti-docs', output: 'Starting server...' },
+    { prompt: '~/projects/gitti-docs', output: welcomeMessage, isWelcome: true },
+  ];
+
+  // Reset animation
+  const resetAnimation = () => {
+    setLines([]);
+    setCurrentLineIndex(0);
+    setTypedText('');
+    setIsClearing(false);
+  };
+
+  // Main animation effect
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (isClearing) {
+      // Clearing animation - erase last line character by character
+      if (lines.length > 0) {
+        const lastLine = lines[lines.length - 1];
+        const lastText = lastLine.command || lastLine.output || '';
+
+        if (lastText.length > 0) {
+          // Remove one character from the last line
+          timeout = setTimeout(() => {
+            setLines(prev => {
+              const newLines = [...prev];
+              const lastIdx = newLines.length - 1;
+              const text = newLines[lastIdx].command || newLines[lastIdx].output || '';
+              const shortenedText = text.substring(0, text.length - 1);
+
+              if (newLines[lastIdx].command) {
+                newLines[lastIdx] = { ...newLines[lastIdx], command: shortenedText };
+              } else {
+                newLines[lastIdx] = { ...newLines[lastIdx], output: shortenedText };
+              }
+              return newLines;
+            });
+          }, 35); // Faster than typing (20ms per character)
+        } else {
+          // Last line is empty, remove it
+          setLines(prev => prev.slice(0, -1));
+        }
+      } else {
+        // All lines cleared, reset
+        resetAnimation();
+      }
+    } else if (currentLineIndex < commandSequence.length) {
+      const currentCmd = commandSequence[currentLineIndex];
+      const textToType = currentCmd.command || currentCmd.output || '';
+
+      if (typedText.length < textToType.length) {
+        // Typing effect
+        timeout = setTimeout(() => {
+          setTypedText(textToType.substring(0, typedText.length + 1));
+        }, 75); // 50ms per character
+      } else {
+        // Finished typing this command, wait then move to next
+        timeout = setTimeout(() => {
+          setLines(prev => [...prev, {
+            ...currentCmd,
+            command: currentCmd.command ? typedText : undefined,
+            output: currentCmd.output ? typedText : undefined,
+          }]);
+          setTypedText('');
+          setCurrentLineIndex(prev => prev + 1);
+        }, currentCmd.isWelcome ? 0 : 500);
+      }
+    } else if (currentLineIndex === commandSequence.length) {
+      // Animation complete, wait 10 seconds then start clearing
+      timeout = setTimeout(() => {
+        setIsClearing(true);
+      }, 10000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [currentLineIndex, typedText, isClearing, lines]);
+
+  return (
+    <div className={styles.terminalWindow}>
+      <div className={styles.terminalHeader}>
+        <div className={clsx(styles.terminalDot, styles.red)}></div>
+        <div className={clsx(styles.terminalDot, styles.yellow)}></div>
+        <div className={clsx(styles.terminalDot, styles.green)}></div>
+      </div>
+      <div className={styles.terminalBody}>
+        {lines.map((line, idx) => (
+          <div key={idx} className={clsx(styles.terminalLine, line.output && styles.output)}>
+            {line.command !== undefined && (
+              <>
+                <span className={styles.prompt}>➜</span> <span className={styles.path}>{line.prompt}</span> {line.command}
+              </>
+            )}
+            {line.output !== undefined && (
+              <span className={line.isWelcome ? styles.welcomeMessage : undefined}>
+                {line.output}
+                {line.isWelcome && <span className={styles.cursor}></span>}
+              </span>
+            )}
+          </div>
+        ))}
+        {typedText && currentLineIndex < commandSequence.length && (
+          <div className={clsx(styles.terminalLine, commandSequence[currentLineIndex].output && styles.output)}>
+            {commandSequence[currentLineIndex].command !== undefined && (
+              <>
+                <span className={styles.prompt}>➜</span> <span className={styles.path}>{commandSequence[currentLineIndex].prompt}</span> {typedText}
+                <span className={styles.cursor}></span>
+              </>
+            )}
+            {commandSequence[currentLineIndex].output !== undefined && (
+              <>
+                {typedText}
+                <span className={styles.cursor}></span>
+              </>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -96,9 +217,9 @@ function InstallSection() {
 
   const installCommands = {
     go: 'go install github.com/gohyuhan/gitti@latest',
-    macos: 'brew install gitti',
-    linux: 'curl -fsSL https://raw.githubusercontent.com/gohyuhan/gitti/main/install.sh | sh',
-    windows: 'irm https://raw.githubusercontent.com/gohyuhan/gitti/main/install.ps1 | iex'
+    macos: 'Coming soon...',
+    linux: 'Coming soon...',
+    windows: 'Coming soon...'
   };
 
   const tabs = [
@@ -107,10 +228,6 @@ function InstallSection() {
     { id: 'linux', label: <Translate id="install.tab.linux">Linux</Translate> },
     { id: 'windows', label: <Translate id="install.tab.windows">Windows</Translate> }
   ];
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(installCommands[activeTab]);
-  };
 
   return (
     <section className={styles.installSection}>
@@ -132,9 +249,9 @@ function InstallSection() {
               </button>
             ))}
           </div>
-          <div className={styles.installCommand} onClick={copyToClipboard}>
-            <code>{installCommands[activeTab]}</code>
-          </div>
+          <CodeBlock language={activeTab === 'windows' ? 'powershell' : activeTab === 'go' ? 'bash' : 'bash'}>
+            {installCommands[activeTab]}
+          </CodeBlock>
         </div>
       </div>
     </section>

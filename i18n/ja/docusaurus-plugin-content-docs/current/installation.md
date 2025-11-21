@@ -21,6 +21,24 @@ go install github.com/gohyuhan/gitti@latest
 
 `gitti`をどこからでも実行できるように、`$GOPATH/bin`が`$PATH`に含まれていることを確認してください。
 
+## macOS
+
+```bash
+近日公開予定です。
+```
+
+## Linux
+
+```bash
+近日公開予定です。
+```
+
+## Windows
+
+```bash
+近日公開予定です。
+```
+
 ## ソースからビルド
 
 1.  リポジトリをクローンします:
@@ -34,7 +52,7 @@ go install github.com/gohyuhan/gitti@latest
     go build -o gitti .
     ```
 
-3.  PATHに含まれるディレクトリに移動します（オプション）:
+3.  PATHに含まれるディレクトリに移動します（任意）:
     ```bash
     mv gitti /usr/local/bin/
     ```

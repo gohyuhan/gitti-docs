@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Gitti 使用 Go 構建，可以通過 `go install` 安裝，也可以下載預編譯的二進位檔案。
 
-##以此為前提
+## 以此為前提
 
 - **Git**: 確保已安裝 Git 並將其添加到 PATH 中。
 - **終端**: 建議使用支持真彩色 (True Color) 的終端模擬器。
@@ -21,6 +21,24 @@ go install github.com/gohyuhan/gitti@latest
 
 確保您的 `$GOPATH/bin` 在 `$PATH` 中，以便在任何地方運行 `gitti`。
 
+## macOS
+
+```bash
+即將推出。
+```
+
+## Linux
+
+```bash
+即將推出。
+```
+
+## Windows
+
+```bash
+即將推出。
+```
+
 ## 從源碼構建
 
 1.  克隆倉庫：
@@ -34,7 +52,7 @@ go install github.com/gohyuhan/gitti@latest
     go build -o gitti .
     ```
 
-3.  移動到 PATH 中的目錄（可選）：
+3.  移動到 PATH 中的目錄（非必要）：
     ```bash
     mv gitti /usr/local/bin/
     ```

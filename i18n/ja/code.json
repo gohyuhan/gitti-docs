@@ -46,5 +46,8 @@
     },
     "install.tab.windows": {
         "message": "Windows"
+    },
+    "terminal.welcome": {
+        "message": "Gitti Docsへようこそ"
     }
 }

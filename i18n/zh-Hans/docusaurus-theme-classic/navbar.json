@@ -1,4 +1,8 @@
 {
+    "item.label.Docs": {
+        "message": "文档",
+        "description": "Navbar item with label Docs"
+    },
     "item.label.Get Started": {
         "message": "开始使用",
         "description": "Navbar item with label Get Started"

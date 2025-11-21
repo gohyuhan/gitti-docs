@@ -98,8 +98,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/favicon.png',
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -113,10 +112,10 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
+          to: '/docs/intro',
           label: 'Docs',
+          position: 'left',
+          activeBaseRegex: '^/docs/(?!faq($|/))',
         },
         {
           to: '/docs/faq',
@@ -168,7 +167,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Gitti.`,
+      copyright: `Copyright © ${new Date().getFullYear()} gitti. By <a href="https://my.linkedin.com/in/yu-han-goh-209480200" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">Yu Han Goh</a>`,
     },
     prism: {
       theme: prismThemes.github,

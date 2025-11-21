@@ -20,7 +20,7 @@
         "description": "The label of footer link with label GitHub"
     },
     "copyright": {
-        "message": "Copyright © 2025 Gitti.",
+        "message": "Copyright 2025 gitti (開発者: <a href=\"https://my.linkedin.com/in/yu-han-goh-209480200\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"text-decoration:none;color:inherit;\">Yu Han Goh</a>)",
         "description": "The footer copyright string"
     }
 }
