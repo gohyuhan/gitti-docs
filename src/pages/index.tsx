@@ -35,10 +35,10 @@ function EyeIcon() {
   );
 }
 
-function HomepageHeader() {
+function Hero() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero', styles.heroBanner)}>
+    <section className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
@@ -70,8 +70,9 @@ function HomepageHeader() {
         </div>
 
         <TerminalWindow />
+        <InstallSection />
       </div>
-    </header>
+    </section>
   );
 }
 
@@ -277,9 +278,8 @@ export default function Home(): JSX.Element {
     <Layout
       title={translate({ id: 'homepage.title', message: 'Home' })}
       description={translate({ id: 'homepage.description', message: 'A fast, lightweight terminal UI for Git operations' })}>
-      <HomepageHeader />
-      <InstallSection />
       <main>
+        <Hero />
         <section className={styles.features}>
           <div className="container">
             <div className="row">
