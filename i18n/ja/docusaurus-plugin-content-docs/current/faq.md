@@ -99,3 +99,81 @@ Gittiは、以下によって**ターミナルでのGit履歴と状態の視覚�
 - [GitHub](https://github.com/gohyuhan/gitti)でissueを開く
 
 ユーザビリティ、Gitワークフロー、または**Git TUI**の新しいアイデアに関するフィードバックは特に歓迎します。
+
+## アンインストールとクリーンアップ
+
+### macOS (Homebrew)
+```bash
+# 1. アンインストール + すべてのバージョンを削除
+brew uninstall --force gitti
+
+# 2. タップを削除
+brew untap gohyuhan/gitti
+
+# 3. バイナリを直接削除 (シンボリックリンクでない場合やbrewが見逃した場合)
+rm -f /opt/homebrew/bin/gitti
+rm -f /usr/local/bin/gitti
+
+# 4. gittiのCellarフォルダ全体を削除 (古いkeg)
+rm -rf /opt/homebrew/Cellar/gitti
+rm -rf /usr/local/Cellar/gitti
+
+# 5. 残っているシンボリックリンクを削除
+rm -rf /opt/homebrew/opt/gitti
+rm -rf /usr/local/opt/gitti
+
+# 6. gittiのキャッシュされたダウンロードをすべて削除
+rm -rf ~/Library/Caches/Homebrew/gitti*
+rm -rf ~/Library/Caches/Homebrew/downloads/*gitti*
+```
+
+### Windows (Scoop)
+```powershell
+# 1. アプリをアンインストール (すべてのバージョン)
+scoop uninstall gitti 2>$null
+
+# 2. バケットを削除
+scoop bucket rm gitti 2>$null
+
+# 3. アプリフォルダを完全に削除 (shims + persistを含む)
+rm -r -force "$env:USERPROFILE\scoop\apps\gitti" 2>$null
+
+# 4. バケットのクローンを削除
+rm -r -force "$env:USERPROFILE\scoop\buckets\gitti" 2>$null
+
+# 5. gittiのキャッシュされたインストーラーをすべて削除
+scoop cache rm "gitti*" 2>$null
+```
+
+### 手動インストール (curl / powershell)
+
+#### macOS / Linux
+```bash
+# バイナリを削除 (curl経由でインストールした場合)
+sudo rm -f /usr/local/bin/gitti
+```
+
+#### Windows
+```powershell
+# バイナリとディレクトリを削除
+Remove-Item -Path "$env:LOCALAPPDATA\gitti" -Recurse -Force
+```
+
+### 設定のクリーンアップ
+
+Gittiの設定ファイルを完全に削除するには:
+
+#### macOS
+```bash
+rm -rf "$HOME/Library/Application Support/gitti"
+```
+
+#### Linux
+```bash
+rm -rf "$HOME/.config/gitti"
+```
+
+#### Windows
+```powershell
+Remove-Item -Path "$env:APPDATA\gitti" -Recurse -Force
+```

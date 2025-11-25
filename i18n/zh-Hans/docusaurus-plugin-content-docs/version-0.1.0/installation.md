@@ -21,29 +21,43 @@ go install github.com/gohyuhan/gitti@latest
 
 确保您的 `$GOPATH/bin` 在 `$PATH` 中，以便在任何地方运行 `gitti`。
 
-## macOS
+## macOS (curl 或 homebrew)
 
 ```bash
-即将推出。
+curl --proto "=https" -sSfL https://github.com/gohyuhan/gitti/releases/latest/download/install.sh | bash
+
+# 通过 homebrew
+# 添加 tap (仅需一次)
+brew tap gohyuhan/gitti
+
+# 安装最新版
+brew update && brew install gitti
 ```
 
 ## Linux
 
 ```bash
-即将推出。
+curl --proto "=https" -sSfL https://github.com/gohyuhan/gitti/releases/latest/download/install.sh | bash
 ```
 
-## Windows
+## Windows (PowerShell 或 scoop)
 
-```bash
-即将推出。
+```powershell
+powershell -c "irm https://github.com/gohyuhan/gitti/releases/latest/download/install.ps1 | iex"
+
+# 通过 scoop
+# 添加 bucket (仅需一次)
+scoop bucket add gitti https://github.com/gohyuhan/scoop-gitti
+
+# 安装最新版
+scoop update; scoop install gitti
 ```
 
 ## 从源码构建
 
 1.  克隆仓库：
     ```bash
-    git clone https://github.com/gohyuhan/gitti.git
+    git clone git@github.com:gohyuhan/gitti.git
     cd gitti
     ```
 

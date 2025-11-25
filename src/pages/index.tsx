@@ -218,16 +218,20 @@ function InstallSection() {
 
   const installCommands = {
     go: 'go install github.com/gohyuhan/gitti@latest',
-    macos: 'Coming soon...',
-    linux: 'Coming soon...',
-    windows: 'Coming soon...'
+    macos: 'curl --proto "=https" -sSfL https://github.com/gohyuhan/gitti/releases/latest/download/install.sh | bash',
+    macos_homebrew: 'brew tap gohyuhan/gitti\nbrew update && brew install gitti',
+    linux: 'curl --proto "=https" -sSfL https://github.com/gohyuhan/gitti/releases/latest/download/install.sh | bash',
+    windows: 'powershell -c "irm https://github.com/gohyuhan/gitti/releases/latest/download/install.ps1 | iex"',
+    windows_scoop: 'scoop bucket add gitti https://github.com/gohyuhan/scoop-gitti\nscoop update; scoop install gitti'
   };
 
   const tabs = [
     { id: 'go', label: <Translate id="install.tab.go">Go</Translate> },
     { id: 'macos', label: <Translate id="install.tab.macos">macOS</Translate> },
+    { id: 'macos_homebrew', label: <Translate id="install.tab.macos_homebrew">macOS (Homebrew)</Translate> },
     { id: 'linux', label: <Translate id="install.tab.linux">Linux</Translate> },
-    { id: 'windows', label: <Translate id="install.tab.windows">Windows</Translate> }
+    { id: 'windows', label: <Translate id="install.tab.windows">Windows</Translate> },
+    { id: 'windows_scoop', label: <Translate id="install.tab.windows_scoop">Windows (Scoop)</Translate> }
   ];
 
   return (
@@ -250,7 +254,7 @@ function InstallSection() {
               </button>
             ))}
           </div>
-          <CodeBlock language={activeTab === 'windows' ? 'powershell' : activeTab === 'go' ? 'bash' : 'bash'}>
+          <CodeBlock language={activeTab.includes('windows') ? 'powershell' : 'bash'}>
             {installCommands[activeTab]}
           </CodeBlock>
         </div>

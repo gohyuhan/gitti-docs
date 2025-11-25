@@ -99,3 +99,81 @@ Gitti 專注於透過以下方式**在終端中視覺化 Git 歷史和狀態**�
 - 在 [GitHub](https://github.com/gohyuhan/gitti) 上開啟一個 issue
 
 特別歡迎關於可用性、Git 工作流或 **Git TUI** 新想法的反饋。
+
+## 解除安裝與清理
+
+### macOS (Homebrew)
+```bash
+# 1. 解除安裝 + 刪除所有版本
+brew uninstall --force gitti
+
+# 2. 移除 tap
+brew untap gohyuhan/gitti
+
+# 3. 直接刪除二進位檔案 (以防它不是符號連結或 brew 遺漏了它)
+rm -f /opt/homebrew/bin/gitti
+rm -f /usr/local/bin/gitti
+
+# 4. 刪除 gitti 的整個 Cellar 資料夾 (舊 keg)
+rm -rf /opt/homebrew/Cellar/gitti
+rm -rf /usr/local/Cellar/gitti
+
+# 5. 刪除任何殘留的符號連結
+rm -rf /opt/homebrew/opt/gitti
+rm -rf /usr/local/opt/gitti
+
+# 6. 刪除 gitti 的所有快取下載
+rm -rf ~/Library/Caches/Homebrew/gitti*
+rm -rf ~/Library/Caches/Homebrew/downloads/*gitti*
+```
+
+### Windows (Scoop)
+```powershell
+# 1. 解除安裝應用程式 (所有版本)
+scoop uninstall gitti 2>$null
+
+# 2. 移除 bucket
+scoop bucket rm gitti 2>$null
+
+# 3. 完全刪除應用程式資料夾 (包括 shims + persist)
+rm -r -force "$env:USERPROFILE\scoop\apps\gitti" 2>$null
+
+# 4. 刪除 bucket 複製
+rm -r -force "$env:USERPROFILE\scoop\buckets\gitti" 2>$null
+
+# 5. 刪除 gitti 的所有快取安裝程式
+scoop cache rm "gitti*" 2>$null
+```
+
+### 手動安裝 (curl / powershell)
+
+#### macOS / Linux
+```bash
+# 刪除二進位檔案 (如果透過 curl 安裝)
+sudo rm -f /usr/local/bin/gitti
+```
+
+#### Windows
+```powershell
+# 刪除二進位檔案和目錄
+Remove-Item -Path "$env:LOCALAPPDATA\gitti" -Recurse -Force
+```
+
+### 設定清理
+
+要完全刪除 Gitti 的配置檔案：
+
+#### macOS
+```bash
+rm -rf "$HOME/Library/Application Support/gitti"
+```
+
+#### Linux
+```bash
+rm -rf "$HOME/.config/gitti"
+```
+
+#### Windows
+```powershell
+Remove-Item -Path "$env:APPDATA\gitti" -Recurse -Force
+```

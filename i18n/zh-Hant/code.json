@@ -41,11 +41,17 @@
     "install.tab.macos": {
         "message": "macOS"
     },
+    "install.tab.macos_homebrew": {
+        "message": "macOS (Homebrew)"
+    },
     "install.tab.linux": {
         "message": "Linux"
     },
     "install.tab.windows": {
         "message": "Windows"
+    },
+    "install.tab.windows_scoop": {
+        "message": "Windows (Scoop)"
     },
     "terminal.welcome": {
         "message": "歡迎來到 Gitti 文檔"
