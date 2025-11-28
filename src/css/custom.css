@@ -52,6 +52,10 @@
   --gitti-card-bg: rgba(36, 40, 59, 1);
   --gitti-table-bg: rgba(26, 27, 38, 1);
   --gitti-code-bg: #1f2335;
+
+  /* Heading Colors */
+  --gitti-h1-color: var(--gitti-blue);
+  --gitti-h2-color: var(--gitti-lavender);
 }
 
 /* Light Mode */
@@ -83,6 +87,10 @@
 
   --ifm-font-color-base: #1a202c;
   --ifm-heading-color: #1a202c;
+
+  /* Heading Colors */
+  --gitti-h1-color: #4c1d95;
+  --gitti-h2-color: #7c3aed;
 }
 
 /* Grid Background Effect */
@@ -334,6 +342,14 @@ article h1,
 article h2,
 article h3 {
   position: relative;
+}
+
+article h1 {
+  color: var(--gitti-h1-color);
+}
+
+article h2 {
+  color: var(--gitti-h2-color);
 }
 
 article h1::before {
