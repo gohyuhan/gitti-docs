@@ -165,6 +165,27 @@ After versioning, `docs/docs/` becomes the "next" version. However, since we hav
 
 To make a version visible, you must run `npm run docusaurus docs:version <VERSION>`.
 
+### 🔄 Syncing Current Docs to a Specific Version
+
+If you have made changes to the current documentation (`docs/docs/` and `i18n/.../current/`) and want to apply them to an existing version (e.g., `0.1.0`), use the sync script.
+
+**Script:** `scripts/sync_docs_version.sh`
+
+**Usage:**
+```bash
+./scripts/sync_docs_version.sh <version>
+```
+
+**Example:**
+```bash
+./scripts/sync_docs_version.sh 0.1.0
+```
+
+**What it does:**
+1.  **Clears** the destination version directories (`versioned_docs/version-X.X.X` and `i18n/.../version-X.X.X`).
+2.  **Copies** content from `docs/` to `versioned_docs/version-X.X.X`.
+3.  **Copies** content from `i18n/.../current` to `i18n/.../version-X.X.X` for all supported languages.
+
 ### Making a Version the Default
 
 The **latest version** in `versions.json` is always the default.
