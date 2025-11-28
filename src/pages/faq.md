@@ -59,11 +59,11 @@ Gitti is being built with **Go** and **Bubble Tea**, and is intended to run well
 - Linux
 - Windows (via a compatible terminal)
 
-See the [Installation](./installation.md) page for the current installation instructions.
+See the [Installation](/docs/installation) page for the current installation instructions.
 
 ## How do I install Gitti?
 
-Go to the [Installation](./installation.md) guide for the most up‑to‑date commands. In short, you can usually install Gitti via:
+Go to the [Installation](/docs/installation) guide for the most up‑to‑date commands. In short, you can usually install Gitti via:
 
 - `go install` (Go toolchain)
 - Package managers (where available)
@@ -91,11 +91,11 @@ This makes it easier to understand your repository at a glance compared to plain
 
 ## How can I learn the keybindings?
 
-Check the [Keybindings](./keybindings.md) page for a complete list. Many keys are inspired by popular terminal tools so they’re easy to remember.
+Check the [Keybindings](/docs/keybindings) page for a complete list. Many keys are inspired by popular terminal tools so they're easy to remember.
 
 ## Where can I get help or give feedback?
 
-- Read the [Docs](./intro.md)
+- Read the [Docs](/docs/intro)
 - Open an issue on [GitHub](https://github.com/gohyuhan/gitti)
 
 Feedback about usability, Git workflows, or new ideas for the **Git TUI** are especially welcome.
@@ -127,6 +127,8 @@ rm -rf ~/Library/Caches/Homebrew/gitti*
 rm -rf ~/Library/Caches/Homebrew/downloads/*gitti*
 ```
 
+---
+
 ### Windows (Scoop)
 ```powershell
 # 1. Uninstall the app (all versions)
@@ -145,6 +147,8 @@ rm -r -force "$env:USERPROFILE\scoop\buckets\gitti" 2>$null
 scoop cache rm "gitti*" 2>$null
 ```
 
+---
+
 ### Manual Installation (curl / powershell)
 
 #### macOS / Linux
@@ -158,6 +162,8 @@ sudo rm -f /usr/local/bin/gitti
 # Remove binary and directory
 Remove-Item -Path "$env:LOCALAPPDATA\gitti" -Recurse -Force
 ```
+
+---
 
 ### Configuration Cleanup
 

@@ -35,6 +35,8 @@ Discarding changes involves a safety check to prevent accidental data loss.
         - **Follow-up**: After choosing, a confirmation popup appears.
 4.  **Confirm**: Press `enter` to confirm.
 
+---
+
 ### Viewing Diffs
 
 1.  **Select**: Highlight a file.

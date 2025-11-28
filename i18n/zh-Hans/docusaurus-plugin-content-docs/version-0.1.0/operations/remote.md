@@ -33,13 +33,15 @@ sidebar_position: 4
     - `git push --force-with-lease`
 4.  **确认**: 选择选项并按 `enter`。
 
+---
+
 ### 拉取更改
 
 1.  **触发**: 按 `P` (shift+p)。
 2.  **逻辑流程**:
     - **检查远程**: 与推送类似，检查现有远程。
 3.  **拉取选项**: 出现弹窗选择拉取模式：
-    - `git pull` (合并)
+    - `git pull` (基于用户配置)
     - `git pull --rebase`
     - `git pull --no-rebase`
 4.  **确认**: 选择选项并按 `enter`。

@@ -122,10 +122,9 @@ const config: Config = {
           to: '/docs/intro',
           label: 'Docs',
           position: 'left',
-          activeBaseRegex: '^/docs/(?!faq($|/))',
         },
         {
-          to: '/docs/faq',
+          to: '/faq',
           label: 'FAQ',
           position: 'left',
         },
@@ -160,7 +159,7 @@ const config: Config = {
             },
             {
               label: 'FAQ',
-              to: '/docs/faq',
+              to: '/faq',
             },
           ],
         },

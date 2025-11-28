@@ -32,6 +32,8 @@ Create and modify commits with a dedicated input interface.
 5.  **Submit**: Press `ctrl+e`.
     - **Why `ctrl+e`?**: Since `enter` is used for new lines in the description field, `ctrl+e` is used to submit the form.
 
+---
+
 ### Amending a Commit
 
 1.  **Trigger**: Press `A` (shift+a).

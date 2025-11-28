@@ -32,6 +32,8 @@ sidebar_position: 3
 5.  **提交**: 按 `ctrl+e`。
     - **为什么是 `ctrl+e`?**: 因为 `enter` 用于在描述字段中换行，所以使用 `ctrl+e` 来提交表单。
 
+---
+
 ### 修改提交 (Amend)
 
 1.  **触发**: 按 `A` (shift+a)。

@@ -100,6 +100,8 @@ This page lists all available keybindings in Gitti, organized by context and sce
 | `tab` | Next Field | Moves to next input field (if multiple fields exist) |
 | `shift+tab` | Previous Field | Moves to previous input field (if multiple fields exist) |
 
+---
+
 ### Selection Popups
 *Applies to: Branch Type, Switch Type, Push Type, Pull Type, Remote Selection, Discard Type*
 
@@ -110,12 +112,16 @@ This page lists all available keybindings in Gitti, organized by context and sce
 | `enter` | Confirm Selection | Proceeds with selected option |
 | `esc` | Cancel | Closes popup without action |
 
+---
+
 ### Output/Result Popups
 *Applies to: Push Output, Pull Output, Switch Branch Output*
 
 | Key | Action | Notes |
 | :--- | :--- | :--- |
 | `esc` | Close Popup | Dismisses the output popup |
+
+---
 
 ### Keybinding Help Popup
 
