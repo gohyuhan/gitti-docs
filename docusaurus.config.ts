@@ -26,6 +26,7 @@ const config: Config = {
   projectName: 'gitti', // Usually your repo name.
 
   onBrokenLinks: 'throw',
+  trailingSlash: true,
 
   markdown: {
     format: 'mdx',
@@ -106,6 +107,10 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/favicon.png',
+    metadata: [
+      { name: 'keywords', content: 'git, terminal, ui, cli, open source, tool, productivity, developer tools, git tui, git ui, git terminal, git client, command line interface, cli tool, git gui, terminal ui, developer productivity, git operations, git workflow, ターミナル, オープンソース, ツール, 生産性, 開発者ツール, git tui, git ui, git ターミナル, git クライアント, コマンドライン, cli ツール, ターミナル ui, 開発者ツール, git 操作, 终端, 开源, 工具, 生产力, 开发者工具, git tui, git ui, git 终端, git 客户端, 命令行, cli 工具, 终端 ui, 开发者工具, git 操作, 終端, 開源, 生產力, 開發者工具, git tui, git ui, git 終端, git 客戶端, 命令列, cli 工具, 終端 ui, 開發者工具, git 操作' },
+      { name: 'description', content: 'Gitti is a fast, lightweight terminal UI for Git operations, designed to keep you in your flow.' },
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
