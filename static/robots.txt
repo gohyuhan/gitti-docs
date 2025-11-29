@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gitti.app/sitemap.xml
+Sitemap: https://gitti.app/ja/sitemap.xml
+Sitemap: https://gitti.app/zh-Hans/sitemap.xml
+Sitemap: https://gitti.app/zh-Hant/sitemap.xml

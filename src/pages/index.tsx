@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Head from '@docusaurus/Head';
 import Translate, { translate } from '@docusaurus/Translate';
 import CodeBlock from '@theme/CodeBlock';
 import styles from './index.module.css';
@@ -282,6 +283,22 @@ export default function Home(): JSX.Element {
     <Layout
       title={translate({ id: 'homepage.title', message: 'Home' })}
       description={translate({ id: 'homepage.description', message: 'A fast, lightweight terminal UI for Git operations' })}>
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Gitti",
+            "operatingSystem": "Windows, macOS, Linux",
+            "applicationCategory": "DeveloperApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          })}
+        </script>
+      </Head>
       <main>
         <Hero />
         <section className={styles.features}>
