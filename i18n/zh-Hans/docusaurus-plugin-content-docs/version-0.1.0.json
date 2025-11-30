@@ -3,7 +3,7 @@
         "message": "0.1.0",
         "description": "The label for version 0.1.0"
     },
-    "sidebar.tutorialSidebar.category.Core Operations": {
+    "sidebar.sideBar.category.Core Operations": {
         "message": "核心操作",
         "description": "The label for the Core Operations category"
     }
