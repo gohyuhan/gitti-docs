@@ -25,12 +25,12 @@ docs/
 │       ├── remote.md
 │       └── stash.md
 ├── versioned_docs/
-│   └── version-0.1.0/            # Frozen snapshot of v0.1.0
+│   └── version-0.1.x/            # Frozen snapshot of v0.1.0
 ├── i18n/
 │   ├── ja/
 │   │   └── docusaurus-plugin-content-docs/
 │   │       ├── current/          # Japanese (current/next)
-│   │       └── version-0.1.0/    # Japanese (v0.1.0)
+│   │       └── version-0.1.x/    # Japanese (v0.1.0)
 │   ├── zh-Hans/                  # Simplified Chinese
 │   └── zh-Hant/                  # Traditional Chinese
 └── src/                          # Landing page & styling
@@ -194,7 +194,7 @@ The **latest version** in `versions.json` is always the default.
 ```json
 [
   "0.2.0",
-  "0.1.0"
+  "0.1.x"
 ]
 ```
 
@@ -205,7 +205,7 @@ The **latest version** in `versions.json` is always the default.
 [
   "0.3.0",
   "0.2.0",
-  "0.1.0"
+  "0.1.x"
 ]
 ```
 

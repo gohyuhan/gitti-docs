@@ -3,7 +3,7 @@
 # Check if version argument is provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <version>"
-  echo "Example: $0 0.1.0"
+  echo "Example: $0 0.1.x"
   exit 1
 fi
 
