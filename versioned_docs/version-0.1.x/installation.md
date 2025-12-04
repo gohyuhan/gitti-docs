@@ -21,29 +21,43 @@ go install github.com/gohyuhan/gitti@latest
 
 Ensure your `$GOPATH/bin` is in your `$PATH` to run `gitti` from anywhere.
 
-## macOS
+## macOS (curl or homebrew)
 
 ```bash
-Coming soon.
+curl --proto "=https" -sSfL https://github.com/gohyuhan/gitti/releases/latest/download/install.sh | bash
+
+# via homebrew
+# Add the tap (once)
+brew tap gohyuhan/gitti
+
+# Install latest
+brew update && brew install gitti
 ```
 
 ## Linux
 
 ```bash
-Coming soon.
+curl --proto "=https" -sSfL https://github.com/gohyuhan/gitti/releases/latest/download/install.sh | bash
 ```
 
-## Windows
+## Windows (PowerShell or scoop)
 
-```bash
-Coming soon.
+```powershell
+powershell -c "irm https://github.com/gohyuhan/gitti/releases/latest/download/install.ps1 | iex"
+
+# via scoop
+# Add the bucket (once)
+scoop bucket add gitti https://github.com/gohyuhan/scoop-gitti
+
+# Install latest
+scoop update; scoop install gitti
 ```
 
 ## Build from Source
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/gohyuhan/gitti.git
+    git clone git@github.com:gohyuhan/gitti.git
     cd gitti
     ```
 

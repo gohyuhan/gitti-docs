@@ -28,6 +28,8 @@ Manage Git branches directly from the **Local Branches** panel.
 5.  **Input**: Type the new branch name.
 6.  **Submit**: Press `enter`.
 
+---
+
 ### Switching to Another Branch
 
 1.  **Select**: Use `↑/↓` or `j/k` to select a branch in the **Local Branches** panel.
@@ -35,11 +37,15 @@ Manage Git branches directly from the **Local Branches** panel.
 3.  **Popup**: If conflicts or uncommitted changes exist, a **Choose Switch Branch Type** popup appears.
 4.  **Output**: A **Switch Branch Output** popup shows the result.
 
+---
+
 ### Deleting a Branch
 
 1.  **Select**: Highlight the branch you want to delete.
 2.  **Trigger**: Press `D` (shift+d).
 3.  **Confirmation**: The branch is deleted (no popup for confirmation).
+
+---
 
 ### Renaming a Branch
 
