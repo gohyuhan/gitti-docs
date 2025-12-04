@@ -31,9 +31,11 @@ Discarding changes involves a safety check to prevent accidental data loss.
     - **Scenario A (Simple)**: File has changes only in working tree OR only in index.
         - **Popup**: "Confirm Discard".
     - **Scenario B (Complex)**: File has changes in BOTH working tree and index (staged and unstaged changes).
-        - **Popup**: "Choose Discard Type" (Discard Staged, Discard Unstaged, or Both).
+        - **Popup**: "Choose Discard Type" (Discard Whole or Discard Unstaged).
         - **Follow-up**: After choosing, a confirmation popup appears.
 4.  **Confirm**: Press `enter` to confirm.
+
+---
 
 ### Viewing Diffs
 

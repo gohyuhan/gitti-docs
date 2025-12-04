@@ -30,6 +30,8 @@ Press `3` to focus on the **Stash** panel.
 3.  **Popup**: "Stash Message". Enter a descriptive name for your stash.
 4.  **Submit**: Press `enter`.
 
+---
+
 ### Managing Stashes
 
 1.  **Focus**: Navigate to **Stash** (`3`).

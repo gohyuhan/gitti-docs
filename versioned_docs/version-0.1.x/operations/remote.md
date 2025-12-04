@@ -33,13 +33,15 @@ Push and pull changes with support for multiple remotes and advanced options.
     - `git push --force-with-lease`
 4.  **Confirm**: Select an option and press `enter`.
 
+---
+
 ### Pulling Changes
 
 1.  **Trigger**: Press `P` (shift+p).
 2.  **Logic Flow**:
     - **Check Remotes**: Similar to push, checks for existing remotes.
 3.  **Pull Options**: A popup appears to select the pull mode:
-    - `git pull` (Merge)
+    - `git pull` (Based on user configuration)
     - `git pull --rebase`
     - `git pull --no-rebase`
 4.  **Confirm**: Select an option and press `enter`.
