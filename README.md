@@ -151,15 +151,62 @@ This will:
 - Create `i18n/zh-Hant/docusaurus-plugin-content-docs/version-0.2.0/` (Traditional Chinese)
 - Update `versions.json`
 
-#### 3. Verify the Version
+#### 3. Create Version JSON Files for i18n
+
+**YOU MUST MANUALLY CREATE THESE FILES FOR EACH LANGUAGE.**
+
+For each language, create a `version-<VERSION>.json` file in `i18n/<LANG>/docusaurus-plugin-content-docs/`:
+
+```bash
+# Japanese
+vim i18n/ja/docusaurus-plugin-content-docs/version-0.2.0.json
+
+# Simplified Chinese
+vim i18n/zh-Hans/docusaurus-plugin-content-docs/version-0.2.0.json
+
+# Traditional Chinese
+vim i18n/zh-Hant/docusaurus-plugin-content-docs/version-0.2.0.json
+```
+
+**Template content:**
+```json
+{
+    "version.label": {
+        "message": "0.2.0",
+        "description": "The label for version 0.2.0"
+    },
+    "sidebar.docsSidebar.category.Core Operations": {
+        "message": "[TRANSLATED: Core Operations]",
+        "description": "The label for the Core Operations category"
+    }
+}
+```
+
+Replace `[TRANSLATED: Core Operations]` with the appropriate translation for each language:
+- **Japanese:** `コア操作`
+- **Simplified Chinese:** `核心操作`
+- **Traditional Chinese:** `核心操作`
+
+#### 4. Create Versioned Sidebars (if needed)
+
+If you have a custom sidebar configuration in `versioned_sidebars/`, you may need to create a versioned sidebar file:
+
+```bash
+# This is typically auto-generated, but verify it exists
+ls versioned_sidebars/version-0.2.0-sidebars.json
+```
+
+If it doesn't exist or needs customization, create it based on the structure in `sidebars.ts`.
+
+#### 5. Verify the Version
 
 ```bash
 npm run build
 ```
 
-Check the version dropdown in the navbar to ensure `0.2.0` appears.
+Check the version dropdown in the navbar to ensure `0.2.0` appears with correct translations in all languages.
 
-#### 4. Continue Working on "Next"
+#### 6. Continue Working on "Next"
 
 After versioning, `docs/docs/` becomes the "next" version. However, since we have `includeCurrentVersion: false` in the config, **"next" won't be visible to users**.
 

@@ -45,3 +45,7 @@ sidebar_position: 4
     - `git pull --rebase`
     - `git pull --no-rebase`
 4.  **確認**: 選擇選項並按 `enter`。
+
+:::note
+變基和合併選項將從當前分支自己的上游拉取。在即將推出的版本中將支持與其他遠程或分支進行變基或合併。
+:::

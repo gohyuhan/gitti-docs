@@ -45,3 +45,7 @@ sidebar_position: 4
     - `git pull --rebase`
     - `git pull --no-rebase`
 4.  **确认**: 选择选项并按 `enter`。
+
+:::note
+变基和合并选项将从当前分支自己的上游拉取。在即将推出的版本中将支持与其他远程或分支进行变基或合并。
+:::

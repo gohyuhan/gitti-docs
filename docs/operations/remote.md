@@ -45,3 +45,7 @@ Push and pull changes with support for multiple remotes and advanced options.
     - `git pull --rebase`
     - `git pull --no-rebase`
 4.  **Confirm**: Select an option and press `enter`.
+
+:::note
+The rebase and merge options will pull from the current branch's own upstream. Support for rebasing or merging with other remotes or branches will be available in an upcoming version.
+:::
