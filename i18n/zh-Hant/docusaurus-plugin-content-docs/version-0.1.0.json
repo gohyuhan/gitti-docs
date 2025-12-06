@@ -1,9 +1,9 @@
 {
     "version.label": {
-        "message": "0.1.x",
-        "description": "The label for version 0.1.x"
+        "message": "0.1.0",
+        "description": "The label for version 0.1.0"
     },
-    "sidebar.tutorialSidebar.category.Core Operations": {
+    "sidebar.docsSidebar.category.Core Operations": {
         "message": "核心操作",
         "description": "The label for the Core Operations category"
     }
