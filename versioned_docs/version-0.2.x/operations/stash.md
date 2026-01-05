@@ -7,17 +7,18 @@ sidebar_position: 5
 Save uncommitted changes for later use.
 
 ## Navigation
-Press `3` to focus on the **Stash** panel.
+
+Press `4` to focus on the **Stash** panel.
 
 ## Keybindings
 
-| Key | Action | Context |
-| :--- | :--- | :--- |
-| `s` | Stash File | From Modified Files |
-| `S` | Stash All | From Modified Files |
-| `space` | Apply Stash | From Stash Panel |
-| `backspace` | Pop Stash | From Stash Panel |
-| `d` | Drop Stash | From Stash Panel |
+| Key         | Action      | Context             |
+| :---------- | :---------- | :------------------ |
+| `s`         | Stash File  | From Modified Files |
+| `S`         | Stash All   | From Modified Files |
+| `space`     | Apply Stash | From Stash Panel    |
+| `backspace` | Pop Stash   | From Stash Panel    |
+| `d`         | Drop Stash  | From Stash Panel    |
 
 ## Workflows
 
