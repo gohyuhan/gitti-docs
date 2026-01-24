@@ -1,10 +1,10 @@
 {
     "version.label": {
-        "message": "0.3.0",
-        "description": "The label for version 0.3.0"
+        "message": "0.3.x",
+        "description": "The label for version 0.3.x"
     },
     "sidebar.sideBar.category.Core Operations": {
-        "message": "コア操作",
+        "message": "核心操作",
         "description": "The label for the Core Operations category"
     }
 }
