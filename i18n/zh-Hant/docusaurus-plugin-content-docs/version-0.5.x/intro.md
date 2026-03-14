@@ -10,7 +10,7 @@ sidebar_position: 1
 
 Gitti 圍繞三個主要組件構建：
 
-1.  **本地分支 (Local Branches)** (左上)
+1.  **本地分支 / 標籤 / 遠端 (Local Branches / Tags / Remotes)** (左上) — 使用 `< / >` 切換
 2.  **修改的檔案 (Modified Files)** (左中)
 3.  **提交日誌 (Commit Log)** (左下)
 4.  **暫存區 (Stash)** (左下)

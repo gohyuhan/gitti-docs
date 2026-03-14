@@ -10,7 +10,7 @@ sidebar_position: 1
 
 Gitti is built around three main components:
 
-1.  **Local Branches** (Left Top)
+1.  **Local Branches / Tags / Remotes** (Left Top) — switch with `< / >`
 2.  **Modified Files** (Left Middle)
 3.  **Commit Log** (Left Bottom)
 4.  **Stash** (Left Bottom)

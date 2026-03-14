@@ -1,0 +1,8 @@
+{
+    "label": "コア操作",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Gitti におけるすべてのコア Git 操作の詳細ガイド。"
+    }
+}
