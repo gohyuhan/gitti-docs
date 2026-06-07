@@ -45,11 +45,17 @@ function Hero() {
           <div className={styles.heroContent}>
             <Heading as="h1" className="hero__title">
               <span>{siteConfig.title}</span>
+              <span className={styles.heroH1Keyword}>
+                {translate({
+                  id: 'homepage.h1tagline',
+                  message: 'Fast, Keyboard-Driven Git Terminal UI (TUI)',
+                })}
+              </span>
             </Heading>
             <p className="hero__subtitle">
               {translate({
-                id: 'homepage.description',
-                message: 'A fast, lightweight Git TUI (terminal interface) for Git operations',
+                id: 'homepage.tagline',
+                message: 'A fast, lightweight Git TUI (terminal interface) for Git operations — manage branches, worktrees, commits, merges, rebase, stash, tags and more without leaving your terminal.',
               })}
             </p>
             <div className={styles.buttons}>
@@ -281,20 +287,72 @@ function Feature({ title, description, icon: Icon }) {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title={translate({ id: 'homepage.title', message: 'Home' })}
-      description={translate({ id: 'homepage.description', message: 'A fast, lightweight terminal UI for Git operations' })}>
+      title={translate({ id: 'homepage.title', message: 'Fast, Keyboard-Driven Git Terminal UI (TUI)' })}
+      description={translate({ id: 'homepage.description', message: 'Gitti is a fast, lightweight, keyboard-driven Git terminal UI (TUI). Manage branches, worktrees, staging, commits, merges, rebase, stash, tags, remotes, reflog and blame without leaving your terminal.' })}>
       <Head>
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             "name": "Gitti",
+            "alternateName": "Gitti Git TUI",
+            "url": "https://gitti.yuhangoh.com/",
+            "description":
+              "Gitti is a fast, lightweight, keyboard-driven Git terminal UI (TUI). Manage branches, worktrees, staging, commits, merges, rebase, stash, tags, remotes, reflog and blame without leaving your terminal.",
             "operatingSystem": "Windows, macOS, Linux",
             "applicationCategory": "DeveloperApplication",
+            "applicationSubCategory": "Git client",
+            "softwareVersion": "0.8.0",
+            "downloadUrl": "https://github.com/gohyuhan/gitti/releases/latest",
+            "softwareHelp": "https://gitti.yuhangoh.com/docs/intro",
+            "license": "https://github.com/gohyuhan/gitti/blob/main/LICENSE",
+            "image": "https://gitti.yuhangoh.com/img/favicon.png",
+            "isAccessibleForFree": true,
+            "featureList": [
+              "Branch management",
+              "Worktree management",
+              "Interactive staging and line-level staging",
+              "Syntax-aware diff viewer",
+              "Commit, amend and commit signing (GPG/SSH)",
+              "Push, pull and merge",
+              "Interactive rebase",
+              "Cherry-pick, reset and revert",
+              "Stash management",
+              "Tag and remote management",
+              "Reflog and git blame",
+              "Commit log and branch graph",
+              "Multi-language UI (English, Japanese, Simplified & Traditional Chinese)"
+            ],
+            "author": {
+              "@type": "Person",
+              "name": "Yu Han Goh",
+              "url": "https://my.linkedin.com/in/yu-han-goh-209480200"
+            },
+            "sameAs": ["https://github.com/gohyuhan/gitti"],
             "offers": {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Gitti",
+            "url": "https://gitti.yuhangoh.com/",
+            "description":
+              "Documentation for Gitti, a fast, lightweight, keyboard-driven Git terminal UI (TUI).",
+            "inLanguage": ["en", "ja", "zh-Hans", "zh-Hant"],
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate":
+                  "https://gitti.yuhangoh.com/search?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
             }
           })}
         </script>

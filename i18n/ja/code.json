@@ -1,9 +1,12 @@
 {
     "homepage.title": {
-        "message": "ホーム"
+        "message": "高速・キーボード駆動の Git ターミナル UI（TUI）"
+    },
+    "homepage.h1tagline": {
+        "message": "高速・キーボード駆動の Git ターミナル UI（TUI）"
     },
     "homepage.description": {
-        "message": "Git操作のための高速で軽量な Git TUI（ターミナルインターフェース）"
+        "message": "Gitti は高速・軽量・キーボード駆動の Git ターミナル UI（TUI）です。ブランチ、worktree、ステージング、コミット、マージ、リベース、スタッシュ、タグ、リモート、reflog、blame をターミナルから離れずに管理できます。"
     },
     "homepage.tagline": {
         "message": "Git操作のための高速で軽量なターミナルUI"
