@@ -1,9 +1,12 @@
 {
     "homepage.title": {
-        "message": "首頁"
+        "message": "快速、鍵盤驅動的 Git 終端 UI（TUI）"
+    },
+    "homepage.h1tagline": {
+        "message": "快速、鍵盤驅動的 Git 終端 UI（TUI）"
     },
     "homepage.description": {
-        "message": "一個快速、輕量級的 Git TUI（終端介面），用於 Git 操作"
+        "message": "Gitti 是一個快速、輕量、鍵盤驅動的 Git 終端 UI（TUI）。無需離開終端即可管理分支、worktree（工作樹）、暫存、提交、合併、變基、儲藏、標籤、遠端、reflog 和 blame。"
     },
     "homepage.tagline": {
         "message": "一個快速、輕量級的 Git 操作終端 UI"
