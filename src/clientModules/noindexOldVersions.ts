@@ -2,7 +2,7 @@
 // versions so search engines consolidate ranking on the latest version (served at
 // /docs/) instead of splitting it across duplicate older-version pages.
 
-const ARCHIVED_VERSION_RE = /\/docs\/0\.(?:1\.0|[1-7]\.x)\//;
+const ARCHIVED_VERSION_RE = /\/docs\/0\.(?:1\.0|[1-8]\.x)\//;
 
 function updateRobotsMeta(pathname: string): void {
   if (typeof document === "undefined") {
