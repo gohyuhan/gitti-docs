@@ -1,0 +1,8 @@
+{
+    "label": "核心操作",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Gitti 中所有核心 Git 操作的詳細指南。"
+    }
+}

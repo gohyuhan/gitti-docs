@@ -96,6 +96,7 @@ const config: Config = {
             "**/docs/0.5.x/**",
             "**/docs/0.6.x/**",
             "**/docs/0.7.x/**",
+            "**/docs/0.8.x/**",
           ],
           filename: "sitemap.xml",
         },

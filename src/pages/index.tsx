@@ -302,7 +302,7 @@ export default function Home(): JSX.Element {
             "operatingSystem": "Windows, macOS, Linux",
             "applicationCategory": "DeveloperApplication",
             "applicationSubCategory": "Git client",
-            "softwareVersion": "0.8.0",
+            "softwareVersion": "0.9.0",
             "downloadUrl": "https://github.com/gohyuhan/gitti/releases/latest",
             "softwareHelp": "https://gitti.yuhangoh.com/docs/intro",
             "license": "https://github.com/gohyuhan/gitti/blob/main/LICENSE",
@@ -320,6 +320,8 @@ export default function Home(): JSX.Element {
               "Stash management",
               "Tag and remote management",
               "Reflog and git blame",
+              "List filtering across branch, tag, remote, worktree, file, commit log, reflog and stash panels",
+              "Mouse support for panel focus and list selection",
               "Commit log and branch graph",
               "Multi-language UI (English, Japanese, Simplified & Traditional Chinese)"
             ],
